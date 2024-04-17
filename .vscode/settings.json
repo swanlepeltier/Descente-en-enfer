@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Descente en enfer.sln"
+    "dotnet.defaultSolution": "Descente-en-enfer.sln"
 }
