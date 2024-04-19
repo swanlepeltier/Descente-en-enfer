@@ -24,7 +24,7 @@ public class SwordBehaviour : MonoBehaviour
             MousePosition.y - transform.position.y
         );
         transform.up = direction;
-
+        
         transform.Rotate (0,0,45);  // Parce que le sprite est orienté à -45° donc il faut compenser
     }
 }
