@@ -1,4 +1,0 @@
-repository "Descente en enfer@GL01_Game@cloud"
-  path "/"
-    br "/main"
-    co "/main"
