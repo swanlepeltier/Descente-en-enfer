@@ -8,12 +8,18 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float Speed = 5f;
+    public Animation anim;
     Rigidbody2D rb;
     UnityEngine.Vector2 dir;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animation>();
+        foreach (AnimationState state in anim)
+        {
+            state.speed = 0.5F;
+        }
     }
 
     void Update()
