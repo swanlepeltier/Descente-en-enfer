@@ -39,9 +39,7 @@ public class SwordBehaviour : MonoBehaviour
         else{
             sprite.sortingOrder = 1;
         }
-
-        UnityEngine.Debug.Log(transform.eulerAngles.z);
-
+        
         transform.Rotate (0,0,45);  // Parce que le sprite est orienté à -45° donc il faut compenser
     }
 }
