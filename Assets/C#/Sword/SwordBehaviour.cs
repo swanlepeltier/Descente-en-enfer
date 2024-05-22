@@ -1,14 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
-using Unity.VisualScripting;
-using UnityEditor;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class SwordBehaviour : MonoBehaviour
 {
-    public float SweepSpeed = 10f;
+    public int SweepSpeed = 10;
 
     private float Z_angle;
     Rigidbody2D rb;
@@ -22,6 +19,13 @@ public class SwordBehaviour : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetButtonDown("Fire1"))
+        {
+           // Animation
+        }
+        else{
+            transform.Rotate (0,0,45);  // Parce que le sprite est orienté à -45° donc il faut compenser
+        }
         MousePosition = Input.mousePosition;
         MousePosition = Camera.main.ScreenToWorldPoint(MousePosition); // Position de la souris relative à la caméra
 
@@ -39,7 +43,5 @@ public class SwordBehaviour : MonoBehaviour
         else{
             sprite.sortingOrder = 1;
         }
-        
-        transform.Rotate (0,0,45);  // Parce que le sprite est orienté à -45° donc il faut compenser
     }
 }
