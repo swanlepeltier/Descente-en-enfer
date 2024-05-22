@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95e66c6366d904e98bc83428217d4fd7, type: 3}
+  m_Name: HeroPosition
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"graph":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":"Position
+      du H\u00e9ros","summary":null,"pan":{"x":123.2,"y":84.39996},"zoom":1.0,"elements":[{"coroutine":false,"defaultValues":{},"position":{"x":-245.0,"y":-97.0},"guid":"02407d80-8aa1-4712-baae-792678656281","$version":"A","$type":"Unity.VisualScripting.Update","$id":"9"},{"member":{"name":"position","parameterTypes":null,"targetType":"UnityEngine.Transform","targetTypeName":"UnityEngine.Transform","$version":"A"},"defaultValues":{"target":null},"position":{"x":-53.0,"y":17.0},"guid":"20d650c1-b904-421b-816d-7046df28ddc0","$version":"A","$type":"Unity.VisualScripting.GetMember","$id":"11"},{"kind":"Scene","defaultValues":{"name":{"$content":"Hero_Position","$type":"System.String"}},"position":{"x":170.0,"y":-105.0},"guid":"dd983bea-a6f7-46c9-807f-2dba07f947ca","$version":"A","$type":"Unity.VisualScripting.SetVariable","$id":"14"},{"chainable":false,"parameterNames":["message"],"member":{"name":"Log","parameterTypes":["System.Object"],"targetType":"UnityEngine.Debug","targetTypeName":"UnityEngine.Debug","$version":"A"},"defaultValues":{},"position":{"x":426.0,"y":-127.0},"guid":"beab2019-5c09-4489-9f92-9f96678e9599","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"16"},{"sourceUnit":{"$ref":"9"},"sourceKey":"trigger","destinationUnit":{"$ref":"14"},"destinationKey":"assign","guid":"5d4bdc10-3f20-421c-b872-0008eddb04f7","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"14"},"sourceKey":"assigned","destinationUnit":{"$ref":"16"},"destinationKey":"enter","guid":"421dfdf3-c2b0-41f6-a5bb-31c861400946","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"11"},"sourceKey":"value","destinationUnit":{"$ref":"14"},"destinationKey":"input","guid":"59a7d2fb-3ef6-4c9f-a345-ad0386d71fb6","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"14"},"sourceKey":"output","destinationUnit":{"$ref":"16"},"destinationKey":"%message","guid":"93ea2501-643a-4222-8ce4-077353af6406","$type":"Unity.VisualScripting.ValueConnection"},{"position":{"xMin":-359.4,"yMin":-189.2,"xMax":366.2001,"yMax":124.6},"label":"Actualise
+      une variable donnant la position du H\u00e9ros","comment":null,"color":{"r":0.0,"g":0.0,"b":0.0,"a":1.0},"guid":"1c690f6e-7d34-4724-aff2-42d0a26b4239","$version":"A","$type":"Unity.VisualScripting.GraphGroup"}],"$version":"A"}}'
+    _objectReferences: []
