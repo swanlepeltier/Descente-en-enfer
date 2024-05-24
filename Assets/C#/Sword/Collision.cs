@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class CollisionDetection : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class CollisionDetection : MonoBehaviour
             if (coll.gameObject.CompareTag(targetTag))
             {
                 Debug.Log("Collision avec l'objet " + targetTag + " détectée !");
+                CustomEvent.Trigger(GameObject.Find("Hero"),"Damage",coll.gameObject);
             }
         }
     }
