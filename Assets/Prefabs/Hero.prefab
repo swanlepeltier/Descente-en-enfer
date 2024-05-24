@@ -313,6 +313,7 @@ GameObject:
   - component: {fileID: 5038624007447654289}
   - component: {fileID: 4867941077525676450}
   - component: {fileID: 8823274200875399515}
+  - component: {fileID: 5461806012672936923}
   - component: {fileID: 7170257490280250545}
   - component: {fileID: 5668231054333600691}
   - component: {fileID: 8708492239915804284}
@@ -412,6 +413,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
+--- !u!114 &5461806012672936923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4370428853582291077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12317fc77e677343bdcac81a297ef16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Enemy
 --- !u!50 &7170257490280250545
 Rigidbody2D:
   serializedVersion: 4
@@ -483,10 +497,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.5, y: 0.5}
-      - {x: -0.5, y: -0.5}
-      - {x: 0.5, y: -0.5}
-      - {x: 0.5, y: 0.5}
+    - - {x: 0.008563042, y: 0.58342195}
+      - {x: -0.28425407, y: 0.57766867}
+      - {x: -0.2900071, y: -0.640954}
+      - {x: 0.28713036, y: -0.64670753}
+      - {x: 0.29863667, y: 0.58342195}
   m_UseDelaunayMesh: 0
 --- !u!114 &8708492239915804284
 MonoBehaviour:
@@ -630,7 +645,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0028765202, y: -0.028766155}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -641,7 +656,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5800142, y: 1.2186222}
   m_EdgeRadius: 0
 --- !u!1 &8059605484133427849
 GameObject:
