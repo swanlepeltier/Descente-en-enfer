@@ -426,6 +426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Enemy
+  healthBar: {fileID: 0}
 --- !u!50 &7170257490280250545
 Rigidbody2D:
   serializedVersion: 4
@@ -498,10 +499,10 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0.008563042, y: 0.58342195}
-      - {x: -0.28425407, y: 0.57766867}
-      - {x: -0.2900071, y: -0.640954}
-      - {x: 0.28713036, y: -0.64670753}
-      - {x: 0.29863667, y: 0.58342195}
+      - {x: -0.17983961, y: 0.5101061}
+      - {x: -0.2060659, y: -0.405509}
+      - {x: 0.21752048, y: -0.40512037}
+      - {x: 0.1778431, y: 0.5138118}
   m_UseDelaunayMesh: 0
 --- !u!114 &8708492239915804284
 MonoBehaviour:
@@ -645,7 +646,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0028765202, y: -0.028766155}
+  m_Offset: {x: -0.0063364506, y: 0.057222605}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -656,7 +657,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5800142, y: 1.2186222}
+  m_Size: {x: 0.38142157, y: 0.931993}
   m_EdgeRadius: 0
 --- !u!1 &8059605484133427849
 GameObject:
