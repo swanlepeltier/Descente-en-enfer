@@ -27,6 +27,11 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/tenebre.unity
     guid: 85f243374d0f1cd44b8f89c709ad7049
+=======
+    path: Assets/Scenes/Menu.unity
+    guid: 40c8fc71c064df043a5161e9f5c421d7
+>>>>>>> 17c769dc011159fdc0c0f2ea6d0e18407c700e0d
   m_configObjects: {}
