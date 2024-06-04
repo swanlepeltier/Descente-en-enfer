@@ -4,5 +4,29 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/level 1.unity
+    guid: 6bf34dfefdedb584f8f7f00b507907a3
+  - enabled: 1
+    path: Assets/Scenes/piece niv2.unity
+    guid: 6c09ab3ee92617445aadf0647068b559
+  - enabled: 1
+    path: Assets/Scenes/place 3.unity
+    guid: 968b7abc03985c840b3a069fe07f58fc
+  - enabled: 1
+    path: "Assets/Scenes/salle cl\xE9.unity"
+    guid: bc904e6a11e383b459855dd290cc5c00
+  - enabled: 1
+    path: Assets/Scenes/labyrinthe.unity
+    guid: 84947471a6b02424a8c03f530ac448a0
+  - enabled: 1
+    path: Assets/Scenes/lab.unity
+    guid: 0b0f45aa140df174d93a9ba911182e0d
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/tenebre.unity
+    guid: 85f243374d0f1cd44b8f89c709ad7049
   m_configObjects: {}
