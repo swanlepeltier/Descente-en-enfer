@@ -9,9 +9,14 @@ public class CollisionDetection_hero : MonoBehaviour
     // Tag de l'objet avec lequel on veut détecter la collision
     public string targetTag;
     private float Hero_Health;
+    
+    private bool hero_invicible;
+
+    public HealthBar healthBar;
 
  void Start(){
         Hero_Health = (float)Variables.Object(this.gameObject).Get("Hero_Health");
+        healthBar.SetMaxHealth(Hero_Health);
     }
 
     // Fonction appelée lorsqu'une collision se produit
@@ -19,9 +24,27 @@ public class CollisionDetection_hero : MonoBehaviour
     void OnTriggerStay2D(Collider2D coll){          
         if (coll.gameObject.CompareTag(targetTag))
         {
-            Hero_Health = (float)Variables.Object(this.gameObject).Get("Hero_Health") - (float)Variables.Object(coll.gameObject).Get("Damage");
+            if (hero_invicible == false){
+                Debug.Log("Héro Touché");
+                Hero_Health = (float)Variables.Object(this.gameObject).Get("Hero_Health") - (float)Variables.Object(coll.gameObject).Get("Damage");
+                healthBar.SetHealth(Hero_Health);
+                
+                Variables.Object(this.gameObject).Set("Hero_Health",Hero_Health);
+                if (Hero_Health <= 0){
+                    this.gameObject.SetActive(false);
+                    Debug.Log("Héro Mort");
+                }
+                else{
+                    StartCoroutine(invincibility());
+                }
             
-            Variables.Object(this.gameObject).Set("Hero_Health",Hero_Health);
+            }
         }
+    }
+    IEnumerator invincibility(){
+        float invincibility_time = 1f;
+        hero_invicible = true;
+        yield return new WaitForSeconds(invincibility_time);
+        hero_invicible = false;
     }
 }
