@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class CollisionDetection_hero : MonoBehaviour
 {
@@ -12,16 +13,32 @@ public class CollisionDetection_hero : MonoBehaviour
     public string potion_tag = "Potion" ;
     private float Hero_Health;
     private float Hero_Shield;
+    private float Hero_Shield_Max;
     private float Damage_Enemy;
     private bool hero_invicible;
 
     public HealthBar healthBar;
+    public ShieldBar shieldBar;
 
  void Start(){
         Hero_Health = (float)Variables.Object(this.gameObject).Get("Hero_Health");
         Hero_Shield = (float)Variables.Object(this.gameObject).Get("Hero_Shield");
+        Hero_Shield_Max = Hero_Shield;
         healthBar.SetMaxHealth(Hero_Health);
+        shieldBar.SetMaxHealth(Hero_Shield);
     }
+
+void Update(){
+    if(Hero_Shield<Hero_Shield_Max){
+        if(Hero_Shield+1>=Hero_Shield_Max){
+            Hero_Shield = Hero_Shield_Max;
+        }
+        else{
+        Hero_Shield += 1 * Time.deltaTime;
+        }
+        shieldBar.SetHealth(Hero_Shield);
+    }
+}
 
     // Fonction appelée lorsqu'une collision se produit
    
@@ -38,7 +55,7 @@ public class CollisionDetection_hero : MonoBehaviour
                         Hero_Shield = 0f;
                     }
                     Variables.Object(this.gameObject).Set("Hero_Shield",Hero_Shield);
-                    Debug.Log(Hero_Shield);
+                    shieldBar.SetHealth(Hero_Shield);
                 }
                 else {
                     Hero_Health = Hero_Health - Damage_Enemy;

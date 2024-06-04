@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9035414559808875997}
   - component: {fileID: 1091375535857911273}
-  - component: {fileID: 3348423315374876240}
+  - component: {fileID: 6372307519248352613}
   m_Layer: 5
   m_Name: Shield
   m_TagString: Untagged
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3348423315374876240
+--- !u!114 &6372307519248352613
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2801595780392501576}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 746286e2361e73d469c13f7bc2b0a9b3, type: 3}
+  m_Script: {fileID: 11500000, guid: d2335bc2e9703994db0bb6c996dc543b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1091375535857911273}
