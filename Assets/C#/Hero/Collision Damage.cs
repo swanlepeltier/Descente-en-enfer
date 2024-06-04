@@ -11,13 +11,15 @@ public class CollisionDetection_hero : MonoBehaviour
 
     public string potion_tag = "Potion" ;
     private float Hero_Health;
-    
+    private float Hero_Shield;
+    private float Damage_Enemy;
     private bool hero_invicible;
 
     public HealthBar healthBar;
 
  void Start(){
         Hero_Health = (float)Variables.Object(this.gameObject).Get("Hero_Health");
+        Hero_Shield = (float)Variables.Object(this.gameObject).Get("Hero_Shield");
         healthBar.SetMaxHealth(Hero_Health);
     }
 
@@ -27,10 +29,22 @@ public class CollisionDetection_hero : MonoBehaviour
         if (coll.gameObject.CompareTag(targetTag))
         {
             if (hero_invicible == false){
-                Hero_Health = (float)Variables.Object(this.gameObject).Get("Hero_Health") - (float)Variables.Object(coll.gameObject).Get("Damage");
-                healthBar.SetHealth(Hero_Health);
-                
-                Variables.Object(this.gameObject).Set("Hero_Health",Hero_Health);
+                Hero_Shield = (float)Variables.Object(this.gameObject).Get("Hero_Shield");
+                Hero_Health = (float)Variables.Object(this.gameObject).Get("Hero_Health");
+                Damage_Enemy = (float)Variables.Object(coll.gameObject).Get("Damage");
+                if (Hero_Shield > 0){
+                    Hero_Shield = Hero_Shield - Damage_Enemy;
+                    if (Hero_Shield < 0){
+                        Hero_Shield = 0f;
+                    }
+                    Variables.Object(this.gameObject).Set("Hero_Shield",Hero_Shield);
+                    Debug.Log(Hero_Shield);
+                }
+                else {
+                    Hero_Health = Hero_Health - Damage_Enemy;
+                    healthBar.SetHealth(Hero_Health);
+                    Variables.Object(this.gameObject).Set("Hero_Health",Hero_Health);
+                }
                 if (Hero_Health <= 0){
                     this.gameObject.SetActive(false);
                 }
