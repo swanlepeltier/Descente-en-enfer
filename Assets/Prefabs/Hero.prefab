@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 7835969796581110595}
   m_Layer: 3
   m_Name: Hero
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -450,6 +450,7 @@ MonoBehaviour:
   targetTag: Enemy
   potion_tag: Potion
   healthBar: {fileID: 0}
+  shieldBar: {fileID: 0}
 --- !u!50 &7170257490280250545
 Rigidbody2D:
   serializedVersion: 4
