@@ -13,28 +13,71 @@ public class CollisionDetection_hero : MonoBehaviour
     public string potion_tag = "Potion" ;
     private float Hero_Health;
     private float Hero_Shield;
-    private float Hero_Shield_Max;
+    private float Hero_Shield_Max = 100f;
+    private float Hero_Health_Max = 100f;
     private float Damage_Enemy;
     private bool hero_invicible;
 
     public HealthBar healthBar;
     public ShieldBar shieldBar;
 
+    private float timeSinceLastCollision = 0f; 
+    public float collisionCooldown = 5f;
+    public float shieldRegenSpeed = 5f;
+
+    // Drapeau statique pour vérifier si PlayerPrefs a été réinitialisé
+    private static bool prefsReset = false;
+
+    void Awake()
+    {
+#if UNITY_EDITOR
+        // Réinitialise PlayerPrefs lorsque le jeu démarre dans l'éditeur
+        if (!prefsReset)
+        {
+            PlayerPrefs.DeleteAll();
+            prefsReset = true;
+        }
+#endif
+    }
+
  void Start(){
-        Hero_Health = (float)Variables.Object(this.gameObject).Get("Hero_Health");
-        Hero_Shield = (float)Variables.Object(this.gameObject).Get("Hero_Shield");
-        Hero_Shield_Max = Hero_Shield;
-        healthBar.SetMaxHealth(Hero_Health);
-        shieldBar.SetMaxHealth(Hero_Shield);
+        healthBar = GameObject.Find("Health Bar").GetComponent<HealthBar>();
+        shieldBar = GameObject.Find("Shield").GetComponent<ShieldBar>();
+
+        // Vérifie si c'est le premier lancement
+        if (PlayerPrefs.GetInt("FirstLaunch", 1) == 1)
+        {
+            Hero_Shield = (float)Variables.Object(this.gameObject).Get("Hero_Shield");
+            Hero_Health = (float)Variables.Object(this.gameObject).Get("Hero_Health");
+            // Initialiser les valeurs par défaut
+            Hero_Health = 100f; // Valeur par défaut pour la santé
+            Hero_Shield = Hero_Shield_Max; // Valeur par défaut pour le bouclier
+
+            // Marque le jeu comme déjà lancé
+            PlayerPrefs.SetInt("FirstLaunch", 0);
+        }
+        else{
+            Hero_Health = PlayerPrefs.GetFloat("Hero_Health");
+            PlayerPrefs.DeleteKey("Hero_Health");
+            Hero_Shield = PlayerPrefs.GetFloat("Hero_Shield");
+            PlayerPrefs.DeleteKey("Hero_Shield");
+        }
+
+        healthBar.SetMaxHealth(Hero_Health_Max);
+        shieldBar.SetMaxHealth(Hero_Shield_Max);
+        healthBar.SetHealth(Hero_Health);
+        shieldBar.SetHealth(Hero_Shield);
     }
 
 void Update(){
-    if(Hero_Shield<Hero_Shield_Max){
+    timeSinceLastCollision += Time.deltaTime;
+
+    if(timeSinceLastCollision >= collisionCooldown && Hero_Shield < Hero_Shield_Max){
         if(Hero_Shield+1>=Hero_Shield_Max){
             Hero_Shield = Hero_Shield_Max;
         }
         else{
-        Hero_Shield += 1 * Time.deltaTime;
+        Hero_Shield += shieldRegenSpeed * Time.deltaTime;
         }
         shieldBar.SetHealth(Hero_Shield);
     }
@@ -42,12 +85,11 @@ void Update(){
 
     // Fonction appelée lorsqu'une collision se produit
    
-    void OnTriggerStay2D(Collider2D coll){          
+    void OnTriggerStay2D(Collider2D coll){      
         if (coll.gameObject.CompareTag(targetTag))
         {
+            timeSinceLastCollision = 0f;
             if (hero_invicible == false){
-                Hero_Shield = (float)Variables.Object(this.gameObject).Get("Hero_Shield");
-                Hero_Health = (float)Variables.Object(this.gameObject).Get("Hero_Health");
                 Damage_Enemy = (float)Variables.Object(coll.gameObject).Get("Damage");
                 if (Hero_Shield > 0){
                     Hero_Shield = Hero_Shield - Damage_Enemy;
@@ -90,5 +132,11 @@ void Update(){
             Debug.Log("Héro Heal");
             coll.gameObject.SetActive(false);
         }
+    }
+    void OnDestroy()
+    {
+        PlayerPrefs.SetFloat("Hero_Health", Hero_Health);
+        PlayerPrefs.SetFloat("Hero_Shield", Hero_Shield);
+        PlayerPrefs.Save();
     }
 }

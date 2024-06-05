@@ -449,8 +449,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTag: Enemy
   potion_tag: Potion
-  healthBar: {fileID: 0}
-  shieldBar: {fileID: 0}
+  healthBar: {fileID: 3348423315374876240, guid: bb8459a8e99a7464697e3bbfcf27768c, type: 3}
+  shieldBar: {fileID: 6372307519248352613, guid: e0701b6aa28bf18488f5d06503c12138, type: 3}
 --- !u!50 &7170257490280250545
 Rigidbody2D:
   serializedVersion: 4

@@ -17,7 +17,7 @@ public class CollisionDetection : MonoBehaviour
             if (coll.gameObject.CompareTag(targetTag))
             {
                 Debug.Log("Collision avec l'objet " + targetTag + " détectée !");
-                CustomEvent.Trigger(GameObject.Find("Hero"),"Damage",coll.gameObject);
+                CustomEvent.Trigger(GameObject.Find("Hero(Clone)"),"Damage",coll.gameObject);
             }
         }
     }
