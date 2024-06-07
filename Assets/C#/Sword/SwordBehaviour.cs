@@ -36,13 +36,8 @@ public class SwordBehaviour : MonoBehaviour
         else{
             sprite.sortingOrder = 1;
         }
-        
-        if (Input.GetButtonDown("Fire1"))
-        {
-           // Animation
-        }
-        else{
-            transform.Rotate (0,0,45);  // Parce que le sprite est orienté à -45° donc il faut compenser
-        }
+
+        transform.Rotate(0,0,45);  // Parce que le sprite est orienté à -45° donc il faut compenser
+
     }
 }

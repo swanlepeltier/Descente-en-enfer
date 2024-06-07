@@ -20,10 +20,14 @@ public class CollisionDetection_hero : MonoBehaviour
 
     public HealthBar healthBar;
     public ShieldBar shieldBar;
+    public AudioSource src;
+    public AudioSource ShieldRegen;
+    public AudioClip ShieldBreak, PotionDrink, GettingHit, ShieldRegenSound, ShieldFull;
 
     private float timeSinceLastCollision = 0f; 
     public float collisionCooldown = 5f;
     public float shieldRegenSpeed = 5f;
+    private float timer;
 
     // Drapeau statique pour vérifier si PlayerPrefs a été réinitialisé
     private static bool prefsReset = false;
@@ -67,6 +71,9 @@ public class CollisionDetection_hero : MonoBehaviour
         shieldBar.SetMaxHealth(Hero_Shield_Max);
         healthBar.SetHealth(Hero_Health);
         shieldBar.SetHealth(Hero_Shield);
+
+        ShieldRegen.clip = ShieldRegenSound;
+        ShieldRegen.volume = 0.05f;
     }
 
 void Update(){
@@ -78,6 +85,19 @@ void Update(){
         }
         else{
         Hero_Shield += shieldRegenSpeed * Time.deltaTime;
+
+        timer += Time.deltaTime;
+
+        if (timer >= 0.15f)
+        {
+            ShieldRegen.clip = ShieldRegenSound;
+            ShieldRegen.Play();
+            timer = 0.0f;
+        }
+        }
+        if(Hero_Shield >= Hero_Shield_Max){
+            ShieldRegen.clip = ShieldFull;
+            ShieldRegen.Play();
         }
         shieldBar.SetHealth(Hero_Shield);
     }
@@ -90,11 +110,15 @@ void Update(){
         {
             timeSinceLastCollision = 0f;
             if (hero_invicible == false){
+                src.clip = GettingHit;
+                src.Play();
                 Damage_Enemy = (float)Variables.Object(coll.gameObject).Get("Damage");
                 if (Hero_Shield > 0){
                     Hero_Shield = Hero_Shield - Damage_Enemy;
                     if (Hero_Shield < 0){
                         Hero_Shield = 0f;
+                        src.clip = ShieldBreak;
+                        src.Play();
                     }
                     Variables.Object(this.gameObject).Set("Hero_Shield",Hero_Shield);
                     shieldBar.SetHealth(Hero_Shield);
@@ -123,6 +147,8 @@ void Update(){
     void OnTriggerEnter2D(Collider2D coll){
         if (coll.gameObject.CompareTag(potion_tag))
         {
+            src.clip = PotionDrink;
+            src.Play();
             Hero_Health = (float)Variables.Object(this.gameObject).Get("Hero_Health") + (float)Variables.Object(coll.gameObject).Get("Health");
             if (Hero_Health > 100){
                    Hero_Health = 100f;  
