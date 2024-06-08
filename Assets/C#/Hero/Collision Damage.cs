@@ -165,4 +165,10 @@ void Update(){
         PlayerPrefs.SetFloat("Hero_Shield", Hero_Shield);
         PlayerPrefs.Save();
     }
+
+    private void OnApplicationQuit()
+    {
+        // Réinitialiser les valeurs à la fermeture de l'application
+        PlayerPrefs.DeleteAll();
+    }
 }
