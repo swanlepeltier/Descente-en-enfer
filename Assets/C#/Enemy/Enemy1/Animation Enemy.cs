@@ -19,7 +19,6 @@ public class Animation_Enemy1 : MonoBehaviour
     void Update()
     {
         dir = rb.velocity;
-        Debug.Log(dir);
         Animator_Enemy.SetFloat("Speed_ennemy1",dir.magnitude);
         Animator_Enemy.SetFloat("Horizontal_ennemy1", dir.x);
         Animator_Enemy.SetFloat("Vertical_ennemy1", dir.y);

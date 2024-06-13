@@ -105,7 +105,7 @@ void Update(){
 
     // Fonction appelée lorsqu'une collision se produit
    
-    void OnTriggerStay2D(Collider2D coll){      
+    void OnTriggerStay2D(Collider2D coll){   
         if (coll.gameObject.CompareTag(targetTag))
         {
             timeSinceLastCollision = 0f;
