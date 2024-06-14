@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/level 1.unity
     guid: 6bf34dfefdedb584f8f7f00b507907a3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/salle du boss.unity
     guid: b9469a6cc27a270499d8617484e4bcf9
   - enabled: 1

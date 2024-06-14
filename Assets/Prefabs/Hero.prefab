@@ -545,7 +545,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SweepSpeed: 5
-  animationName: Sword_Swipe
 --- !u!111 &5583674682997727330
 Animation:
   m_ObjectHideFlags: 0
