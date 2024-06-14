@@ -13,7 +13,7 @@ public class Music : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "salle du boss"){
+        if (SceneManager.GetActiveScene().name == "salle d'ouverture"){
             src.clip = musique_boss;
         }
         else{
