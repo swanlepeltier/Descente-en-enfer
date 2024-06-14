@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 3367634203639406261}
   - component: {fileID: 8425919553906997457}
   - component: {fileID: 6033743468405178627}
-  - component: {fileID: 5583674682997727330}
+  - component: {fileID: 7857798408403843301}
   m_Layer: 3
   m_Name: Sword
   m_TagString: Untagged
@@ -546,22 +546,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SweepSpeed: 5
---- !u!111 &5583674682997727330
-Animation:
+--- !u!95 &7857798408403843301
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3418597717288416425}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: cae13bfc7a4c6074f8452d16024db9ba, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: cae13bfc7a4c6074f8452d16024db9ba, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fc1bce2df54086e408c97d9576c1146e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4370428853582291077
 GameObject:
   m_ObjectHideFlags: 0
