@@ -417,6 +417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   src: {fileID: 4833524603440306009}
   musique: {fileID: 8300000, guid: 8194fdca90f5bdd42819c87cbb8f4ee1, type: 3}
+  musique_boss: {fileID: 8300000, guid: 0fce6e14c8015fd49a4bd63ff547565d, type: 3}
 --- !u!1 &3418597717288416425
 GameObject:
   m_ObjectHideFlags: 0
