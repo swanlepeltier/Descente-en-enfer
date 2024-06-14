@@ -11,10 +11,13 @@ public class SwordBehaviour : MonoBehaviour
     Rigidbody2D rb;
     Vector2 MousePosition;
     private SpriteRenderer sprite;
+    private Animator Sword_Attack;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
+        Sword_Attack = GetComponent<Animator>();
+
     }
 
     void Update()
@@ -35,6 +38,10 @@ public class SwordBehaviour : MonoBehaviour
         }
         else{
             sprite.sortingOrder = 1;
+        }
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Sword_Attack.Play("attack_sword");
         }
 
         transform.Rotate(0,0,45);  // Parce que le sprite est orienté à -45° donc il faut compenser
