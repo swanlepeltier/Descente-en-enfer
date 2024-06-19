@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Boss : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class Boss : MonoBehaviour
     private Animator anim;
     private float Attack_speed;
     private float Attack_speed_timer;
+    public Text messageText;
+    public string message = "Victoire !";
 
     void Start()
     {
@@ -24,12 +27,12 @@ public class Boss : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
-        targetObject = GameObject.Find("Hero(Clone)");
-
+        messageText.gameObject.SetActive(false);
         Attack_speed=Random.Range(8f,12f);
     }
     void Update()
     {
+        targetObject = GameObject.Find("Hero(Clone)");
         Attack_speed_timer += Time.deltaTime;
         if(Attack_speed_timer >= Attack_speed){
             anim.Play("Boss_Melee");
@@ -43,8 +46,18 @@ public class Boss : MonoBehaviour
         Vector2 targetPosition = targetObject.transform.position;
         Vector2 direction = targetPosition - rb.position;
         direction.Normalize();
- 
         rb.MovePosition(rb.position + direction * Speed * Time.deltaTime);
+
+        if (Health<=0)
+        {
+            DisplayMessage();
+        }
         
+    }
+
+    void DisplayMessage()
+    {
+        messageText.text = message;  
+        messageText.gameObject.SetActive(true);
     }
 }
