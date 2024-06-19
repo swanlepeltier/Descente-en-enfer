@@ -635,6 +635,9 @@ namespace Unity.VisualScripting.Generated.Aot
 	// SwordBehaviour.op_Implicit
 	// SwordBehaviour.op_Equality
 	// SwordBehaviour.op_Inequality
+	// Findreference.op_Implicit
+	// Findreference.op_Equality
+	// Findreference.op_Inequality
 	// laQuete1.op_Implicit
 	// laQuete1.op_Equality
 	// laQuete1.op_Inequality
@@ -1209,6 +1212,7 @@ namespace Unity.VisualScripting.Generated.Aot
 	// UnityEngine.Vector2.x
 	// UnityEngine.Vector2.magnitude
 	// UnityEngine.Vector2.y
+	// --------------- Scene Stubs
 	// --------------- Scene Stubs
 	// --------------- Scene Stubs
 	// --------------- Scene Stubs
@@ -8465,6 +8469,41 @@ namespace Unity.VisualScripting.Generated.Aot
 		// SwordBehaviour.op_Inequality
 		[global::UnityEngine.Scripting.PreserveAttribute()]
 		public static void SwordBehaviour_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Findreference.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Findreference_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Findreference.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Findreference_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Findreference.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Findreference_op_Inequality()
 		{
 			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
 			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
