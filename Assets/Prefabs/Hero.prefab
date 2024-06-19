@@ -417,6 +417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   src: {fileID: 4833524603440306009}
   musique: {fileID: 8300000, guid: 8194fdca90f5bdd42819c87cbb8f4ee1, type: 3}
+  musique_boss: {fileID: 8300000, guid: 0fce6e14c8015fd49a4bd63ff547565d, type: 3}
 --- !u!1 &3418597717288416425
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,7 +430,7 @@ GameObject:
   - component: {fileID: 3367634203639406261}
   - component: {fileID: 8425919553906997457}
   - component: {fileID: 6033743468405178627}
-  - component: {fileID: 5583674682997727330}
+  - component: {fileID: 7857798408403843301}
   m_Layer: 3
   m_Name: Sword
   m_TagString: Untagged
@@ -545,22 +546,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SweepSpeed: 5
---- !u!111 &5583674682997727330
-Animation:
+--- !u!95 &7857798408403843301
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3418597717288416425}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: cae13bfc7a4c6074f8452d16024db9ba, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: cae13bfc7a4c6074f8452d16024db9ba, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fc1bce2df54086e408c97d9576c1146e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4370428853582291077
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,7 +584,6 @@ GameObject:
   - component: {fileID: 8708492239915804284}
   - component: {fileID: 8171418310262941825}
   - component: {fileID: 4527908616626985891}
-  - component: {fileID: -6302159452751431513}
   - component: {fileID: 5299331244586804722}
   - component: {fileID: 806969319026954627}
   - component: {fileID: 4623682420989602616}
@@ -797,7 +802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"Hero_Health","value":{"$content":100.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
-      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Hero_Damage","value":{"$content":35.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Hero_Damage","value":{"$content":40.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Hero_Shield","value":{"$content":100.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
@@ -829,22 +834,6 @@ MonoBehaviour:
     _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
     _objectReferences:
     - {fileID: 11400000, guid: c212f79ac702d294b9552eeda994e4e4, type: 2}
---- !u!114 &-6302159452751431513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4370428853582291077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2fe5546f775c47d2820aa5e8a715f53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
-    _objectReferences:
-    - {fileID: 11400000, guid: 908ea1c2664101344a789895a205ef33, type: 2}
 --- !u!114 &5299331244586804722
 MonoBehaviour:
   m_ObjectHideFlags: 0

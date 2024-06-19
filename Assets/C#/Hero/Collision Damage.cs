@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -105,7 +106,7 @@ void Update(){
 
     // Fonction appelée lorsqu'une collision se produit
    
-    void OnTriggerStay2D(Collider2D coll){      
+    void OnTriggerStay2D(Collider2D coll){   
         if (coll.gameObject.CompareTag(targetTag))
         {
             timeSinceLastCollision = 0f;
@@ -129,7 +130,17 @@ void Update(){
                     Variables.Object(this.gameObject).Set("Hero_Health",Hero_Health);
                 }
                 if (Hero_Health <= 0){
-                    this.gameObject.SetActive(false);
+                    Vector2 Restart_Position;
+                    Restart_Position = new Vector2(-8f,-3.25f);
+                    Variables.Application.Set("HeroCreationPosition", Restart_Position);
+                    SceneManager.LoadScene("level 1");
+                    StartCoroutine(invincibility());
+                    Hero_Shield = 100f;
+                    Hero_Health = 100f;
+                    Variables.Object(this.gameObject).Set("Hero_Shield",Hero_Shield);
+                    Variables.Object(this.gameObject).Set("Hero_Health",Hero_Health);
+                    shieldBar.SetHealth(Hero_Shield);
+                    healthBar.SetHealth(Hero_Health);
                 }
                 else{
                     StartCoroutine(invincibility());
