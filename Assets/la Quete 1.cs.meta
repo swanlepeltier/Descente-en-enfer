@@ -3,7 +3,10 @@ guid: 45c7f97e87177034c833e646555e68fb
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - objectToFind: {instanceID: 0}
+  - quete: {fileID: 2288247360529709084, guid: be7d4af87461ff143a12cdab3726922b, type: 3}
+  - colliderPnj: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

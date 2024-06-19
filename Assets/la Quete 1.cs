@@ -6,13 +6,21 @@ using UnityEngine;
 
 public class laQuete1 : MonoBehaviour
 {
+    public GameObject objectToFind;
     public GameObject quete;
     bool chestOK = false; // quete terminée ??
     public BoxCollider2D colliderPnj;
+    string tagName = "SomeTag";
+    
+
+   
     // Start is called before the first frame update
     void Start()
     {
-        
+          
+          objectToFind = GameObject.FindGameObjectWithTag(tagName);
+          colliderPnj = objectToFind.GetComponent<BoxCollider2D>();
+    
     }
 
     // Update is called once per frame
@@ -20,6 +28,7 @@ public class laQuete1 : MonoBehaviour
     {
         
     }
+     
    private void OnTriggerEnter2D(Collider2D collision)
    {
        if(collision.gameObject.name == "quete1")
@@ -41,4 +50,5 @@ public class laQuete1 : MonoBehaviour
     yield return new WaitForSeconds(5);
     quete.SetActive(false);
    }
+   
 }
