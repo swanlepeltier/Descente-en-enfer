@@ -489,6 +489,12 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 3348423315618053377}
+    - target: {fileID: 693492908419925723, guid: 9265beb664296694bbfab8af257a83ee, type: 3}
+      propertyPath: _data._json
+      value: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"Health","value":{"$content":2500.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"Damage","value":{"$content":50.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+      objectReference: {fileID: 0}
     - target: {fileID: 8656258408990439544, guid: 9265beb664296694bbfab8af257a83ee, type: 3}
       propertyPath: m_Name
       value: Boss
